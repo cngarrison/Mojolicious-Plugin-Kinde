@@ -110,8 +110,8 @@ version v0.0.1
 
   {
 	  kinde => {
-		  jwks_url => 'https://gigspace-development.au.kinde.com/.well-known/jwks.json',
-		  iss      => 'https://gigspace-development.au.kinde.com',
+		  jwks_url => 'https://your-domain.kinde.com/.well-known/jwks.json',
+		  iss      => 'https://your-domain.kinde.com',
 	  },
   }
   
@@ -129,23 +129,23 @@ The sanity checks include:
 
 =over 4
 
-=item - confirm C<iss> claim matches the value from C<kinde> config
+=item confirm C<iss> claim matches the value from C<kinde> config
 
-=item - confirm the C<alg> is C<RS256>
+=item confirm the C<alg> is C<RS256>
 
-=item - confirm the C<aud> array contains the value from C<kinde> config (if not empty)
+=item confirm the C<aud> array contains the value from C<kinde> config (if not empty)
 
 =back 
 
 =head1 HELPERS
 
-=head2 get\_kinde\_claims()
+=head2 get_kinde_claims()
 
 Verifies the JWT from C<Authorization> header and returns the extracted claims.
 
 =head1 ROUTE CONDITIONS
 
-=head2 kinde\_auth
+=head2 kinde_auth
 
 Verifies the JWT from C<Authorization> header and returns boolean for the route condition.
 
@@ -163,12 +163,11 @@ Register conditions in Mojolicious application.
 
 =over 4
 
-=item - L<Mojo::JWT>
+=item L<Mojo::JWT>
 
-=item - L<Kinde (auth service)|https://kinde.com/>
+=item L<Kinde|https://kinde.com/> fantastic auth service
 
 =back 
-
 
 =head1 SUPPORT
  

@@ -1,43 +1,39 @@
-# Mojolicious-Plugin-Kinde
-Plugin to handle auth in Mojolicious for Kinde auth service
-
-
 # NAME
 
-Mojolicious-Plugin-Kinde - Mojolicious Plugin to handle auth for Kinde auth service
+Mojolicious::Plugin::Kinde - A Mojo helper and route condition to extract Kinde auth header, verify JWT token, and return the claims
 
 # VERSION
 
-version 0.000001
+version v0.0.1
 
 # SYNOPSIS
 
-        package MyApp;
-        use Mojo::Base 'Mojolicious';
-     
-        sub startup {
+    package MyApp;
+    use Mojo::Base 'Mojolicious';
+
+    sub startup {
             my $self = shift;
-     
+
             $self->plugin( 'Mojolicious::Plugin::Kinde' ); # config can also be supplied here
 
             $self->routes->get('/api')->requires( kinde_auth => {} );
 
-        }
-        
-        ...
-        
-        # myapp_mojo.pl (config)
+    }
+    
+    ...
+    
+    # myapp_mojo.pl (config)
 
-        {
-        	kinde => {
-				jwks_url => 'https://gigspace-development.au.kinde.com/.well-known/jwks.json',
-				iss      => 'https://gigspace-development.au.kinde.com',
-			},
-        }
-        
-        ...
-        
-        my $claims = $c->get_kinde_claims
+    {
+            kinde => {
+                    jwks_url => 'https://your-domain.kinde.com/.well-known/jwks.json',
+                    iss      => 'https://your-domain.kinde.com',
+            },
+    }
+    
+    ...
+    
+    my $claims = $c->get_kinde_claims
 
 # DESCRIPTION
 
@@ -75,20 +71,19 @@ Register conditions in Mojolicious application.
 
 # SEE ALSO
 
-- [Mojo::JWT](https://metacpan.org/pod/Mojo::JWT)
-- [Kinde (auth service)](https://kinde.com)
-
+- [Mojo::JWT](https://metacpan.org/pod/Mojo%3A%3AJWT)
+- [Kinde (auth service)](https://kinde.com/)
 
 # SUPPORT
- 
+
 ## Bugs / Feature Requests
- 
+
 Please report any bugs or feature requests through the issue tracker at
 https://github.com/cngarrison/Mojolicious-Plugin-Kinde/issues. You will
 be notified automatically of any progress on your issue.
- 
+
 ## Source Code
- 
+
 This is open source software. The code repository is available for
 public review and contribution under the terms of the license.
 
