@@ -72,7 +72,7 @@ Register conditions in Mojolicious application.
 # SEE ALSO
 
 - [Mojo::JWT](https://metacpan.org/pod/Mojo%3A%3AJWT)
-- [Kinde (auth service)](https://kinde.com/)
+- [Kinde](https://kinde.com/) fantastic auth service
 
 # SUPPORT
 
