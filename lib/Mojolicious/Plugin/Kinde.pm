@@ -6,7 +6,7 @@ use Mojo::UserAgent;
 use Mojo::JWT;
 use Mojo::Exception;
 
-our $VERSION = 'v0.0.2';
+our $VERSION = 'v0.0.3';
 
 has jwt      => undef;
 has iss      => '';
